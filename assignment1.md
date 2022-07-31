@@ -31,7 +31,7 @@ You need to show that you have edited a game template or created from a blank pr
    * Make a video to show the project and your code contribution ( < 10 mins )
 
 ## Rubric
- * Set your weighting 
+ * Set your weighting https://forms.office.com/Pages/ResponsePage.aspx?id=Iz7mz1FpfkKGg7uE3PHSDL_gVaTSSb9IvGOkmMqmZVtUM0hOMkYxR1I0TkNENlBXRFVTUlpLUVBJUy4u
 
 Game grading
  * Control systems 20% (10-30)
