@@ -14,12 +14,9 @@ class ASSIGNMENT1_API URunAway : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
-	UFUNCTION(BlueprintCallable, Category = "Run Away")
-	//calculate the distance between	the player and the enemy
-	static float CalculateDistanceStelio(AActor* Player, AActor* Enemy);
 
 	UFUNCTION(BlueprintCallable, Category = "Run Away")
-	static void RunAwayStelio(AActor* Player, AActor* Enemy);
+	static void RunAwayStelio(AActor* Player, AActor* Enemy, float Distance);
 
 	UFUNCTION(BlueprintCallable, Category = "Run Away")
 	static float BaskingStelio(float Energy);

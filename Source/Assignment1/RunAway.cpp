@@ -1,36 +1,29 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿
 
 
 #include "RunAway.h"
 
-
-//calculate the distance between the player and the enemy
-	float URunAway::CalculateDistanceStelio(AActor* Player, AActor* Enemy)
-{
-	FVector PlayerLocation = Player->GetActorLocation();
-	FVector EnemyLocation = Enemy->GetActorLocation();
-	float Distance = FVector::Dist(PlayerLocation, EnemyLocation);
-	return Distance;
 	
-}
-	
-	//Function for when the calculated distance greater or equal to 5 times the length of the enemy, the enemy runs away
-	void URunAway::RunAwayStelio(AActor* Player, AActor* Enemy)
+	//Function for when the enemy distance is within 4 metres of the player, the enemy then randomly moves away
+	void URunAway::RunAwayStelio(AActor* Player, AActor* Enemy, float Distance)
 		{
-		float Distance = URunAway::CalculateDistanceStelio(Player, Enemy);
-			if (Distance >= Enemy->GetActorScale().X * 5)
+			if (Distance <= 400)
 			{
-				Enemy->SetActorRotation(FRotator(0.0f, 180.0f, 0.0f));
+				//Set a random direction for the enemy to move in without the z axis
+				FVector Direction = FVector(FMath::RandRange(-100, 100), FMath::RandRange(-100, 100), 0);
+				
+				Enemy->SetActorLocation(Enemy->GetActorLocation() + Direction);
 			}
 		}
 
 	float URunAway::BaskingStelio(float energy)
 	{
 		float Basking = energy;
-		//if energy is less than or equal to 200, the return energy - 3
+		//if energy is less than or equal to 200, then increase the players energy by 3 
 		if (Basking <= 200)
 		{
 			Basking = Basking + 3;
 		}
 	return Basking;
 	}
+	
